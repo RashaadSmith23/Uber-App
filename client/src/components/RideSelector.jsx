@@ -12,14 +12,8 @@ export default function RideSelector({ onRequest }) {
     API.post('/rides/estimate', { rideType: selected })
         .then(({ data }) => {
         setEstimate(data);
-        // Fetch Claude insight
-        return API.post('/claude/insight', {
-            rideType: selected,
-            distanceKm: data.distanceKm,
-            fare: data.fare
-        });
+        setInsight(data.insight); // no extra API call
         })
-        .then(({ data }) => setInsight(data.insight))
         .catch(console.error);
     }, [selected]);
 

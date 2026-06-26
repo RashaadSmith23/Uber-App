@@ -1,5 +1,7 @@
 const pool = require('../config/db');
 
+const getRandomInsight = require('../utils/rideInsights');
+
 exports.estimateFare = (req, res) => {
   const { rideType } = req.body;
   let baseFare, perKm;
@@ -12,6 +14,9 @@ exports.estimateFare = (req, res) => {
   const distanceKm = +(Math.random() * 20 + 1).toFixed(2);
   const fare = +(baseFare + distanceKm * perKm).toFixed(2);
   res.json({ distanceKm, fare, currency: 'USD', rideType });
+
+  const insight = getRandomInsight();
+  res.json({ distanceKm, fare, currency: 'USD', rideType, insight });
 };
 
 exports.requestRide = async (req, res) => {
