@@ -3,7 +3,7 @@
 A full‑stack ride‑hailing web app with real‑time driver tracking, rider‑driver matching, live map, and booking flow.  
 Built as a monolithic Node.js + React application, ready for production deployment.
 
-![Zippora Screenshot](screenshot.png)  <!-- Replace with an actual screenshot if available -->
+![Zippora Screenshot](/dist/icons.svg) <!-- Replace with an actual screenshot if available -->
 
 ---
 
@@ -23,20 +23,22 @@ Built as a monolithic Node.js + React application, ready for production deployme
 
 ## 📷 Preview
 
-*Add a screenshot or GIF showing the splash screen, rider map, and driver request popup.*
+_Add a screenshot or GIF showing the splash screen, rider map, and driver request popup._
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Backend**  
+**Backend**
+
 - Node.js + Express (REST API)
 - Socket.io (real‑time communication)
 - PostgreSQL (users, trips, payments)
 - Redis (optional – live location caching)
 - JWT (authentication)
 
-**Frontend**  
+**Frontend**
+
 - React (Vite)
 - React Router
 - Leaflet + React‑Leaflet (maps)
@@ -44,13 +46,15 @@ Built as a monolithic Node.js + React application, ready for production deployme
 - Axios (HTTP requests)
 - CSS Glassmorphism + custom animations
 
-**Deployment**  
+**Deployment**
+
 - Railway (backend + database)
 - Vercel (optional – for frontend only; not needed when monolithic)
 
 ---
 
 ## 📁 Project Structure
+
 Uber App/
 ├── server.js # Express + Socket.io entry
 ├── package.json # Root dependencies & build scripts
@@ -88,17 +92,18 @@ Uber App/
 │ └── styles/
 └── dist/ # Built frontend (served by Express)
 
-
 ---
 
 ## 🚀 Getting Started (Local Development)
 
 ### Prerequisites
+
 - **Node.js** v18 or later
 - **PostgreSQL** running locally (you can use a cloud instance too)
 - **Redis** (optional – not required for basic flow)
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/your-username/zippora.git
 cd zippora
@@ -195,3 +200,4 @@ text
 ---
 
 This README covers everything a developer or visitor to your repo needs. You can replace placeholder URLs, screenshots, and your name at the bottom. Let me know if you want to add a specific section (like Stripe integration or Redis setup) and I’ll enhance it.
+```
