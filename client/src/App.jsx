@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Splash from './pages/Splash';
 import RiderHome from './pages/RiderHome';
 import DriverHome from './pages/DriverHome';
@@ -7,9 +7,8 @@ import Register from './pages/Register';
 import { AuthProvider } from './contexts/AuthContext';
 import { SocketProvider } from './contexts/SocketContext';
 import { RideProvider } from './contexts/RideContext';
-import './styles/App.css';
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
