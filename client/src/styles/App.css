@@ -92,6 +92,8 @@ input:focus {
 .splash h1 {
   font-size: 4rem;
   background: linear-gradient(135deg, #00c2ff, #ad00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
   animation: fadeInDown 0.8s;
 }
