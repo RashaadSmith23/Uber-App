@@ -56,11 +56,11 @@ _Add a screenshot or GIF showing the splash screen, rider map, and driver reques
 ## 📁 Project Structure
 
 Uber App/<br>
-├── server.js # Express + Socket.io entry<br>
-├── package.json # Root dependencies & build scripts<br>
-├── .env # Environment variables<br>
-├── src/ # Backend source<br>
-│ ├── app.js # Express app setup<br><br>
+├── server.js<br> <span style="color: gray;"># Express + Socket.io entry</span>
+├── package.json<br> <span style="color: gray;"># Root dependencies & build scripts</span>
+├── .env<br> <span style="color: gray;"># Environment variables</span>
+├── src/<br> <span style="color: gray;"># Backend source</span>
+│ ├── app.js<br> <span style="color: gray;"># Express app setup</span>
 │ ├── config/
 │ │ └── db.js # PostgreSQL connection pool
 │ ├── controllers/
