@@ -56,41 +56,41 @@ _Add a screenshot or GIF showing the splash screen, rider map, and driver reques
 ## 📁 Project Structure
 
 Uber App/<br>
-├── server.js<br> <span style="color: gray;"># Express + Socket.io entry</span>
-├── package.json<br> <span style="color: gray;"># Root dependencies & build scripts</span>
-├── .env<br> <span style="color: gray;"># Environment variables</span>
-├── src/<br> <span style="color: gray;"># Backend source</span>
-│ ├── app.js<br> <span style="color: gray;"># Express app setup</span>
-│ ├── config/
-│ │ └── db.js # PostgreSQL connection pool
-│ ├── controllers/
-│ │ ├── authController.js
-│ │ ├── driverController.js
-│ │ └── rideController.js
-│ ├── middleware/
-│ │ └── auth.js
-│ ├── routes/
-│ │ ├── auth.js
-│ │ ├── drivers.js
-│ │ └── rides.js
-│ ├── utils/
-│ │ ├── jwt.js
-│ │ └── rideInsights.js # Free insight messages
-│ └── db/
-│ └── schema.sql # Database tables
-├── client/ # React frontend
-│ ├── package.json
-│ ├── vite.config.js
-│ ├── index.html
-│ └── src/
-│ ├── main.jsx
-│ ├── App.jsx
-│ ├── components/
-│ ├── contexts/
-│ ├── pages/
-│ ├── services/
-│ └── styles/
-└── dist/ # Built frontend (served by Express)
+├── server.js<br> # Express + Socket.io entry
+├── package.json<br># Root dependencies & build scripts
+├── .env<br># Environment variables
+├── src/<br># Backend source
+│ ├── app.js<br># Express app setup
+│ ├── config/<br>
+│ │ └── db.js # PostgreSQL connection pool<br>
+│ ├── controllers/<br>
+│ │ ├── authController.js<br>
+│ │ ├── driverController.js<br>
+│ │ └── rideController.js<br>
+│ ├── middleware/<br>
+│ │ └── auth.js<br>
+│ ├── routes/<br>
+│ │ ├── auth.js<br>
+│ │ ├── drivers.js<br>
+│ │ └── rides.js<br>
+│ ├── utils/<br>
+│ │ ├── jwt.js<br>
+│ │ └── rideInsights.js # Free insight messages<br>
+│ └── db/<br>
+│ └── schema.sql # Database tables<br>
+├── client/ # React frontend<br>
+│ ├── package.json<br>
+│ ├── vite.config.js<br>
+│ ├── index.html<br>
+│ └── src/<br>
+│ ├── main.jsx<br>
+│ ├── App.jsx<br>
+│ ├── components/<br>
+│ ├── contexts/<br>
+│ ├── pages/<br>
+│ ├── services/<br>
+│ └── styles/<br>
+└── dist/ # Built frontend (served by Express)<br>
 
 ---
 
