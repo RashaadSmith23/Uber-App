@@ -55,7 +55,7 @@ _Add a screenshot or GIF showing the splash screen, rider map, and driver reques
 
 ## 📁 Project Structure
 
-Uber App/
+Uber App/<br>
 ├── server.js # Express + Socket.io entry
 ├── package.json # Root dependencies & build scripts
 ├── .env # Environment variables
