@@ -1,1 +1,245 @@
-:root{--bg-dark:#0d1117;--glass-bg:#ffffff0d;--glass-border:#ffffff26;--glass-shadow:0 8px 32px #0000004d;--accent:#00c2ff;--accent-hover:#00a3d9;--text-light:#e6edf3;--text-muted:#8b949e;--radius:16px;--transition:.3s cubic-bezier(.4, 0, .2, 1)}*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg-dark);color:var(--text-light);font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;overflow:hidden}.glass{background:var(--glass-bg);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius);box-shadow:var(--glass-shadow)}.btn{cursor:pointer;transition:var(--transition);background:var(--accent);color:#fff;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);border:none;border-radius:12px;padding:12px 24px;font-weight:600}.btn:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 0 20px #00c2ff80}.btn:active{transform:translateY(0)}.btn.secondary{background:#ffffff1a;border:1px solid #fff3}.btn.secondary:hover{background:#fff3}input,select{color:var(--text-light);width:100%;transition:var(--transition);background:#ffffff14;border:1px solid #ffffff26;border-radius:10px;padding:12px}input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px #00c2ff33}.splash{text-align:center;background:radial-gradient(at bottom,#1b2735 0%,#090a0f 100%);flex-direction:column;justify-content:center;align-items:center;height:100vh;display:flex}.splash h1{background:linear-gradient(135deg,#00c2ff,#ad00ff);margin-bottom:1rem;font-size:4rem;animation:.8s fadeInDown}.splash p{color:var(--text-muted);margin-bottom:3rem;font-size:1.2rem}.mode-select{gap:1rem;animation:.8s fadeInUp;display:flex}.mode-select a{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--text-light);transition:var(--transition);background:#ffffff1a;border-radius:12px;padding:16px 32px;text-decoration:none}.mode-select a:hover{background:var(--accent);transform:translateY(-5px);box-shadow:0 0 30px #00c2ff99}.overlay{z-index:1000;animation:.4s ease-out slideUp;position:absolute;bottom:20px;left:20px;right:20px}.ride-selector{flex-direction:column;gap:10px;display:flex}.ride-selector button{color:var(--text-light);cursor:pointer;transition:var(--transition);background:#ffffff0f;border:1px solid #0000;border-radius:12px;justify-content:space-between;padding:14px 18px;display:flex}.ride-selector button.active{border-color:var(--accent);background:#00c2ff26}.ride-selector button:hover:not(.active){background:#ffffff1a}.tracking{text-align:center}.tracking h3{margin-bottom:12px}.request-popup{z-index:1000;padding:24px;animation:.5s cubic-bezier(.68,-.55,.265,1.55) popIn;position:absolute;top:20px;left:20px;right:20px}.request-popup h4{margin-bottom:12px}.request-popup .actions{gap:10px;margin-top:16px;display:flex}.insight-text{color:#00c2ff;background:#00c2ff1a;border-radius:10px;margin-top:10px;padding:10px;font-size:.9rem;animation:.5s fadeIn}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}@keyframes fadeInDown{0%{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes slideUp{0%{opacity:0;transform:translateY(100px)}to{opacity:1;transform:translateY(0)}}@keyframes popIn{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}.loading-spinner{border:4px solid #fff3;border-top-color:var(--accent);border-radius:50%;width:40px;height:40px;animation:.8s linear infinite spin;display:inline-block}@keyframes spin{to{transform:rotate(360deg)}}.pulse-dot{background:var(--accent);border-radius:50%;width:16px;height:16px;animation:1.5s infinite pulse;position:relative;box-shadow:0 0 #00c2ffb3}@keyframes pulse{0%{box-shadow:0 0 #00c2ffb3}70%{box-shadow:0 0 0 20px #00c2ff00}to{box-shadow:0 0 #00c2ff00}}
+/* ===== CSS Variables ===== */
+:root {
+  --bg-dark: #0d1117;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --accent: #00c2ff;
+  --accent-hover: #00a3d9;
+  --text-light: #e6edf3;
+  --text-muted: #8b949e;
+  --radius: 16px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+/* ===== Glassmorphism Utility ===== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--accent);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 194, 255, 0.5);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Inputs ===== */
+input, select {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 12px;
+  color: var(--text-light);
+  width: 100%;
+  transition: var(--transition);
+}
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 194, 255, 0.2);
+}
+
+/* ===== Splash Screen ===== */
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  text-align: center;
+}
+.splash h1 {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #00c2ff, #ad00ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.8s;
+}
+.splash p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+.mode-select {
+  display: flex;
+  gap: 1rem;
+  animation: fadeInUp 0.8s;
+}
+.mode-select a {
+  padding: 16px 32px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.mode-select a:hover {
+  background: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 194, 255, 0.6);
+}
+
+/* ===== Map Overlays ===== */
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: slideUp 0.4s ease-out;
+}
+.ride-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ride-selector button {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.ride-selector button.active {
+  border-color: var(--accent);
+  background: rgba(0, 194, 255, 0.15);
+}
+.ride-selector button:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Tracking UI ===== */
+.tracking {
+  text-align: center;
+}
+.tracking h3 {
+  margin-bottom: 12px;
+}
+
+/* ===== Driver Request Popup ===== */
+.request-popup {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 24px;
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.request-popup h4 {
+  margin-bottom: 12px;
+}
+.request-popup .actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.insight-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #00c2ff;
+  background: rgba(0, 194, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Spinner / Loading ===== */
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Pulsing dot for driver location ===== */
+.pulse-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 0 0 rgba(0, 194, 255, 0.7);
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 194, 255, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(0, 194, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 194, 255, 0); }
+}

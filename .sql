@@ -1,3 +1,0 @@
-CREATE DATABASE zippora;
-CREATE USER zippora_admin WITH PASSWORD '2309';
-GRANT ALL PRIVILEGES ON DATABASE zippora TO zippora_admin;
