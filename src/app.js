@@ -7,7 +7,20 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "blob:"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://unpkg.com"],
+        imgSrc: ["'self'", "data:", "https://*.tile.openstreetmap.org"],
+        connectSrc: ["'self'", "ws://localhost:*", "http://localhost:*"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      },
+    },
+  })
+);
 app.use(cors());   // allow all origins (fine for a monolithic app)
 app.use(morgan('dev'));
 app.use(express.json());

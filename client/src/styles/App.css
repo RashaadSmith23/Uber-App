@@ -79,6 +79,11 @@ input:focus {
   box-shadow: 0 0 0 3px rgba(0, 194, 255, 0.2);
 }
 
+select option {
+    background-color: var(--bg-dark);
+    color: var(--accent);
+}
+
 /* ===== Splash Screen ===== */
 .splash {
   display: flex;
@@ -125,11 +130,13 @@ input:focus {
 /* ===== Map Overlays ===== */
 .overlay {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   animation: slideUp 0.4s ease-out;
+  background: #ffffff;
+  padding: 30px;
 }
 .ride-selector {
   display: flex;
@@ -137,15 +144,16 @@ input:focus {
   gap: 10px;
 }
 .ride-selector button {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid transparent;
-  border-radius: 12px;
-  color: var(--text-light);
-  cursor: pointer;
-  transition: var(--transition);
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgb(192 216 255 / 50%);
+    border-radius: 12px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    color: black;
 }
 .ride-selector button.active {
   border-color: var(--accent);
